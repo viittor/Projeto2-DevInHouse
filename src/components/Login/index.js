@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import {useHistory} from 'react-router'
+import {useHistory} from 'react-router';
+import '../../App.css'
+import Logo from '../../logo.gif'
 
 const Login = () => {
-
+    
     const history = useHistory();
+
     const[email, setEmail] = useState('');
     const[password, setPassword] = useState('');
 
@@ -23,7 +26,9 @@ const Login = () => {
                 }else if(password.length < 8){
                     alert('A senha deve conter no mínimo 8 caracteres!'); return;
                 }
+                console.log('cheguei aqui')
                 history.push('/map');
+                console.log('cheguei aqui')
                 
         }catch(error){
             alert("Não foi possivel concluir a sua solicitação!")
@@ -33,7 +38,7 @@ const Login = () => {
     return(
         <form className='container-login' onSubmit={handleSubmit}>
         <div className='logo'>
-            <h1>Login</h1>
+            <img src={Logo}title='SGI' alt='sgi'/>
         </div>
         <div className='login-form-container'>
             <label>E-mail<br/>
@@ -54,7 +59,7 @@ const Login = () => {
             </label>
         </div>
         <div className='login-button'>
-        <button type='submit'>Entrar</button>
+        <button id ='button-submit' type='submit'>Entrar</button>
         </div>
         </form>
     )
