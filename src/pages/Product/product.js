@@ -1,11 +1,15 @@
 import React from "react";
+import Product from "../../components/ProductComp";
+import Header from "../../components/Header";
 
-const Product = () => {
+const PageProduct = () => {
     return(
-        <div style={{background: 'yellow'}}>
-           Produto
-        </div>
+        <>
+        <Header/>
+        <Product></Product>
+        </>
+
     );
 };
 
-export default Product;
+export default PageProduct;

@@ -1,11 +1,15 @@
 import React from "react";
+import Header from "../../components/Header";
+import Register from "../../components/RegisterComp";
 
-const Register = () => {
+const PageRegister = () => {
     return(
-        <div style={{background: 'brown'}}>
-           Cadastro
-        </div>
+        <>
+        <Header/>
+        <Register/>
+        </>
+
     );
 };
 
-export default Register;
+export default PageRegister;
