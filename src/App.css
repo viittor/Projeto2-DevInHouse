@@ -75,7 +75,7 @@
 
 /* Register Form */
 
-.container-register{
+.container-form{
     box-sizing: border-box;
     display: flex;
     flex-direction: column;

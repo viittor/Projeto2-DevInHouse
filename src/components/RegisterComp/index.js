@@ -74,10 +74,10 @@ const Register = () => {
     }
   };
   
-  
+
 
   return (
-    <form className="container-register">
+    <form className="container-form">
       <div className="menu-container">
         <h1>Cadastro de Empresas</h1>
         <button type="submit">Salvar</button>
