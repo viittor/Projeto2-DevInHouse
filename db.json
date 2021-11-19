@@ -1,16 +1,29 @@
 {
-    "produtos": [
+    "products": [
   
     ],
-    "empresas": [
-  
+    "enterprises": [
+  {
+    "corporate_name": "Super Patão Ltda",
+    "commercialName": "Patão Supermecado",
+    "cnpj": "15.286.106/0001-90",
+    "emailCompany": "superpatao@gmail.com",
+    "zipCode": "85505-141",
+    "adress": "Av. Tupi",
+    "adressNumber": "3233",
+    "district": "Centro",
+    "city": "Pato Branco",
+    "uf": "Paraná",
+    "complement": "",
+    "coordinates": ["-26.234448544889414", "-52.67188116312716"]
+  }
     ],
-    "fornecedores": [
+    "suppliers": [
       "Del valle",
       "Amazon",
       "Dell"
     ],
-    "categorias": [
+    "groups": [
       "Carnes",
       "Ovos",
       "Higiene",

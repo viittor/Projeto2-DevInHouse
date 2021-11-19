@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router";
+import SERVER from "../../utils/constants";
 
 const Register = () => {
   const history = useHistory();
@@ -19,8 +20,8 @@ const Register = () => {
   const [longitude, setLongitude] = useState("");
 
   const handleSubmit = async (event) => {
-      event.preventDefault();
     try {
+      event.preventDefault();
       if (!corporateName) {
         alert("Por favor preencha a Razão social.");
         return;
@@ -63,8 +64,33 @@ const Register = () => {
         return;
       } else if (!longitude) {
         alert("Por favor preencha a Longitude.");
+        console.log("chegou aqui");
+
         return;
       }
+      console.log("chegou aqui");
+      await fetch(SERVER + "/enterprises", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          corporate_name: corporateName,
+          commercialName: commercialName,
+          cnpj: cnpj,
+          emailCompany: emailCompany,
+          zipCode: zipCode,
+          adress: adress,
+          adressNumber: adressNumber,
+          district: district,
+          city: city,
+          uf: uf,
+          complement: complement,
+          coordinates: [latitude, longitude],
+        }),
+      });
+
       alert("Empresa cadastrada com sucesso!");
       history.push("/map");
     } catch (error) {
@@ -72,12 +98,11 @@ const Register = () => {
         "Não foi possivel concluir a sua solicitação! Por favor tente novamente."
       );
     }
+    console.log("chegou aqui");
   };
-  
-
 
   return (
-    <form className="container-form">
+    <form className="container-form" onSubmit={handleSubmit}>
       <div className="menu-container">
         <h1>Cadastro de Empresas</h1>
         <button type="submit">Salvar</button>
@@ -93,7 +118,7 @@ const Register = () => {
               name="corporateName"
               placeholder="Ex.: Hyper Involves Ltda"
               value={corporateName}
-              onChange=""
+              onChange={(e) => setCorporateName(e.target.value)}
               required
             />
           </label>
@@ -106,7 +131,7 @@ const Register = () => {
               name="commercialName"
               placeholder="Ex.: Hyper Involves"
               value={commercialName}
-              onChange=""
+              onChange={(e) => setCommercialName(e.target.value)}
               required
             />
           </label>
@@ -121,7 +146,7 @@ const Register = () => {
               name="cnpj"
               placeholder="Ex.: 99.999.999/9999-99"
               value={cnpj}
-              onChange=""
+              onChange={(e) => setCnpj(e.target.value)}
               required
             />
           </label>
@@ -134,7 +159,7 @@ const Register = () => {
               name="emailCompany"
               placeholder="Ex.: example@company.com"
               value={emailCompany}
-              onChange=""
+              onChange={(e) => setEmailCompany(e.target.value)}
               required
             />
           </label>
@@ -149,7 +174,7 @@ const Register = () => {
               name="zipCode"
               placeholder="Ex.: 99.999-999"
               value={zipCode}
-              onChange=""
+              onChange={(e) => setZipCode(e.target.value)}
               required
             />
           </label>
@@ -162,7 +187,7 @@ const Register = () => {
               name="adress"
               placeholder="Ex.: Rua dos Involvidos"
               value={adress}
-              onChange=""
+              onChange={(e) => setAdress(e.target.value)}
               required
             />
           </label>
@@ -177,7 +202,7 @@ const Register = () => {
               name="adressNumber"
               placeholder="Ex.: 000"
               value={adressNumber}
-              onChange=""
+              onChange={(e) => setAdressNumber(e.target.value)}
               required
             />
           </label>
@@ -190,7 +215,7 @@ const Register = () => {
               name="district"
               placeholder="Ex.: Centro"
               value={district}
-              onChange=""
+              onChange={(e) => setDistrict(e.target.value)}
               required
             />
           </label>
@@ -205,7 +230,7 @@ const Register = () => {
               name="city"
               placeholder="Ex.: Florianópolis"
               value={city}
-              onChange=""
+              onChange={(e) => setCity(e.target.value)}
               required
             />
           </label>
@@ -218,7 +243,7 @@ const Register = () => {
               name="uf"
               placeholder="Ex.: Santa Catarina"
               value={uf}
-              onChange=""
+              onChange={(e) => setUf(e.target.value)}
               required
             />
           </label>
@@ -233,7 +258,7 @@ const Register = () => {
               name="complement"
               placeholder=""
               value={complement}
-              onChange=""
+              onChange={(e) => setComplement(e.target.value)}
             />
           </label>
         </div>
@@ -247,7 +272,7 @@ const Register = () => {
               name="latitude"
               placeholder="Ex.: 00.000"
               value={latitude}
-              onChange=""
+              onChange={(e) => setLatitude(e.target.value)}
               required
             />
           </label>
@@ -260,7 +285,7 @@ const Register = () => {
               name="longitude"
               placeholder="Ex.: 00.000"
               value={longitude}
-              onChange=""
+              onChange={(e) => setLongitude(e.target.value)}
               required
             />
           </label>
