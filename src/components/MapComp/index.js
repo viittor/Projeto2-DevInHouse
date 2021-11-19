@@ -1,56 +1,44 @@
-import React from "react";
-import {MapContainer,TileLayer, Marker, Popup } from 'react-leaflet';
+import React, { useEffect, useState } from "react";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import SERVER from "../../utils/constants";
+import "../../App.css";
 
-const Map = () => {
+const MapView = () => {
+  const [enterprise, setEnterprise] = useState([]);
 
-const COMPANIES = [
-    {
-        id: 1,
-        name: 'Empresa X',
-        coordinates: [51.505,-0.09]
-  },
-  {
-      id: 2,
-      name: 'Empresa Y',
-      coordinates: [11.505,-0.09]
-    },
-    {
-        id: 3,
-        name: 'Empresa XYTE',
-        coordinates: [13.505,-0.09]
-    },
-    {
-        id: 4,
-        name: 'Empresa Z',
-        coordinates: [12.505,-0.09]
+  useEffect(() => {
+    async function getEnterprise() {
+      const result = await fetch(SERVER + "/enterprises");
+      const dataEnterprise = await result.json();
+      setEnterprise(dataEnterprise);
     }
-]
+    getEnterprise();
+  }, []);
 
-  return(
-  
-        
-        <div className='container-map'>
-        <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
+  return (
+    <div className="container-map">
+      <MapContainer center={[-15.011468551359942, -55.64097279065505]} zoom={4} scrollWheelZoom={true}>
         <TileLayer
-        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        
-        
-        {
-          COMPANIES.map(item => (
-            <Marker position={item.coordinates}>
+          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />     
+        {enterprise.map((item) => (
+          <Marker position={item.coordinates}>
             <Popup>
-            <p>Nome: {item.name}</p>
+              <div className="popupMap">
+                <p>Razão Social: {item.corporateName}</p>
+                <p>Nome Fantasia: {item.commercialName}</p>
+                <p>CNPJ: {item.cnpj}</p>
+                <p>Cidade: {item.city}</p>
+                <p>Estado: {item.uf}</p>
+              </div>
             </Popup>
-            </Marker>
-            ))
-          }
-          </MapContainer>
-          
-          </div>
-          
-    );
+          </Marker>
+        ))}
+      </MapContainer>
+      
+    </div>
+  );
 };
 
-export default Map;
+export default MapView;

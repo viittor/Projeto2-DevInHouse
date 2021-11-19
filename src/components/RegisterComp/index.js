@@ -76,7 +76,7 @@ const Register = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          corporate_name: corporateName,
+          corporateName: corporateName,
           commercialName: commercialName,
           cnpj: cnpj,
           emailCompany: emailCompany,

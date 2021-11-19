@@ -1,10 +1,11 @@
 {
-    "products": [
-  
-    ],
-    "enterprises": [
+  "products": [
+
+
+  ],
+  "enterprises": [
   {
-    "corporate_name": "Super Patão Ltda",
+    "corporateName": "Super Patão Ltda",
     "commercialName": "Patão Supermecado",
     "cnpj": "15.286.106/0001-90",
     "emailCompany": "superpatao@gmail.com",
@@ -16,18 +17,46 @@
     "uf": "Paraná",
     "complement": "",
     "coordinates": ["-26.234448544889414", "-52.67188116312716"]
-  }
-    ],
-    "suppliers": [
-      "Del valle",
-      "Amazon",
-      "Dell"
-    ],
-    "groups": [
-      "Carnes",
-      "Ovos",
-      "Higiene",
-      "Cereais",
-      "Massas"
-    ]
-  }
+  },
+  {
+      "corporateName": "Supermercado Lider Ltda",
+      "commercialName": "Supermercado Lider",
+      "cnpj": "55.283.479/0001-20",
+      "emailCompany": "supermercadolidercorbelia@gmail.com",
+      "zipCode": "30120-020",
+      "adress": "R. Amor Perfeito",
+      "adressNumber": "1708",
+      "district": "Santa Catarina",
+      "city": "Belo Horizonte",
+      "uf": "Minas Gerais",
+      "complement": "Prox. Churrascaria do Toni",
+      "coordinates": ["-19.428672629034295", "-43.90516707394416"]
+    },
+    {
+      "corporateName": "Confeitaria Serpan Ltda",
+      "commercialName": "Confeitaria Serpan",
+      "cnpj": "98.476.987/000144",
+      "emailCompany": "serpanconfeitaria@yahoo.com.br",
+      "zipCode": "69094-260",
+      "adress": "R. Pedro de Ataide",
+      "adressNumber": "27",
+      "district": "Cidade Nova",
+      "city": "Manaus",
+      "uf": "Amazonas",
+      "complement": "",
+      "coordinates": ["-3.04335342857981", "-59.97886303827154"]
+    }
+  ] ,
+  "suppliers": [
+    "Del valle",
+    "Amazon",
+    "Dell"
+  ],
+  "groups": [
+    "Carnes",
+    "Ovos",
+    "Higiene",
+    "Cereais",
+    "Massas"
+  ]  
+}
