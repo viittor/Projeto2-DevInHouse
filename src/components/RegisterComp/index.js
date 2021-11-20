@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
-import SERVER from "../../utils/constants";
+
 
 const Register = () => {
   const history = useHistory();
@@ -69,12 +69,12 @@ const Register = () => {
         return;
       }
       console.log("chegou aqui");
-      await fetch(SERVER + "/enterprises", {
-        method: "POST",
+      await fetch("http://localhost:3333/enterprises", {
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
         },
+        method: "POST",
         body: JSON.stringify({
           corporateName: corporateName,
           commercialName: commercialName,
@@ -87,7 +87,7 @@ const Register = () => {
           city: city,
           uf: uf,
           complement: complement,
-          coordinates: [latitude, longitude],
+          coordinates: [latitude, longitude]
         }),
       });
 

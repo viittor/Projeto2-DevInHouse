@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
-import SERVER from "../../utils/constants";
 
 const Product = () => {
     const history = useHistory();
@@ -28,7 +27,7 @@ const Product = () => {
           alert("Por favor selecione um grupo");
           return;
         }
-        await fetch(SERVER + "/products", {
+        await fetch("http://localhost:3333/products", {
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",

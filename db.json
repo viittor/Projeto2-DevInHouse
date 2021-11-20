@@ -1,24 +1,25 @@
 {
-  "products": [
-
-
-  ],
+  "products": [],
   "enterprises": [
-  {
-    "corporateName": "Super Patão Ltda",
-    "commercialName": "Patão Supermecado",
-    "cnpj": "15.286.106/0001-90",
-    "emailCompany": "superpatao@gmail.com",
-    "zipCode": "85505-141",
-    "adress": "Av. Tupi",
-    "adressNumber": "3233",
-    "district": "Centro",
-    "city": "Pato Branco",
-    "uf": "Paraná",
-    "complement": "",
-    "coordinates": ["-26.234448544889414", "-52.67188116312716"]
-  },
-  {
+    {
+      "corporateName": "Super Patão Ltda",
+      "commercialName": "Patão Supermecado",
+      "cnpj": "15.286.106/0001-90",
+      "emailCompany": "superpatao@gmail.com",
+      "zipCode": "85505-141",
+      "adress": "Av. Tupi",
+      "adressNumber": "3233",
+      "district": "Centro",
+      "city": "Pato Branco",
+      "uf": "Paraná",
+      "complement": "",
+      "coordinates": [
+        "-26.234448544889414",
+        "-52.67188116312716"
+      ],
+      "id": 1
+    },
+    {
       "corporateName": "Supermercado Lider Ltda",
       "commercialName": "Supermercado Lider",
       "cnpj": "55.283.479/0001-20",
@@ -30,7 +31,11 @@
       "city": "Belo Horizonte",
       "uf": "Minas Gerais",
       "complement": "Prox. Churrascaria do Toni",
-      "coordinates": ["-19.428672629034295", "-43.90516707394416"]
+      "coordinates": [
+        "-19.428672629034295",
+        "-43.90516707394416"
+      ],
+      "id": 2
     },
     {
       "corporateName": "Confeitaria Serpan Ltda",
@@ -44,9 +49,31 @@
       "city": "Manaus",
       "uf": "Amazonas",
       "complement": "",
-      "coordinates": ["-3.04335342857981", "-59.97886303827154"]
+      "coordinates": [
+        "-3.04335342857981",
+        "-59.97886303827154"
+      ],
+      "id": 3
+    },
+    {
+      "corporateName": "Empresa Teste",
+      "commercialName": "Super Teste",
+      "cnpj": "55.555.555/0001-05",
+      "emailCompany": "teste@teste.com.br",
+      "zipCode": "84130000",
+      "adress": "Rua Teste",
+      "adressNumber": "42",
+      "district": "Teste",
+      "city": "Teste",
+      "uf": "Teste",
+      "complement": "Testando",
+      "coordinates": [
+        "-4.3405",
+        "-39.012"
+      ],
+      "id": 4
     }
-  ] ,
+  ],
   "suppliers": [
     "Del valle",
     "Amazon",
@@ -58,5 +85,5 @@
     "Higiene",
     "Cereais",
     "Massas"
-  ]  
+  ]
 }

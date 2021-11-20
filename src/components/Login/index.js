@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
 import "../../App.css";
-import Logo from "../../logo.png";
+import Logo from "../../assets/logo.png";
 
 const Login = () => {
   const history = useHistory();
@@ -38,7 +38,9 @@ const Login = () => {
   };
 
   return (
+    <div className='login-body'>
     <form className="container-login" onSubmit={handleSubmit}>
+      <div className='content-login'>
       <div className="logo">
         <img src={Logo} width="200px" title="SGI" alt="sgi" />
       </div>
@@ -73,7 +75,9 @@ const Login = () => {
           Entrar
         </button>
       </div>
+      </div>
     </form>
+    </div>
   );
 };
 export default Login;

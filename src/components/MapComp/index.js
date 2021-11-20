@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import SERVER from "../../utils/constants";
 import "../../App.css";
 
 const MapView = () => {
@@ -8,7 +7,7 @@ const MapView = () => {
 
   useEffect(() => {
     async function getEnterprise() {
-      const result = await fetch(SERVER + "/enterprises");
+      const result = await fetch("http://localhost:3333/enterprises");
       const dataEnterprise = await result.json();
       setEnterprise(dataEnterprise);
     }
@@ -17,13 +16,17 @@ const MapView = () => {
 
   return (
     <div className="container-map">
-      <MapContainer center={[-15.011468551359942, -55.64097279065505]} zoom={4} scrollWheelZoom={true}>
+      <MapContainer
+        center={[-15.011468551359942, -55.64097279065505]}
+        zoom={4}
+        scrollWheelZoom={true}
+      >
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />     
+        />
         {enterprise.map((item) => (
-          <Marker position={item.coordinates}>
+          <Marker position={item.coordinates} key={item.cnpj}> 
             <Popup>
               <div className="popupMap">
                 <p>Razão Social: {item.corporateName}</p>
@@ -36,7 +39,6 @@ const MapView = () => {
           </Marker>
         ))}
       </MapContainer>
-      
     </div>
   );
 };
