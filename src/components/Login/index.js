@@ -38,45 +38,55 @@ const Login = () => {
   };
 
   return (
-    <div className='login-body'>
-    <form className="container-login" onSubmit={handleSubmit}>
-      <div className='content-login'>
-      <div className="logo">
-        <img src={Logo} width="200px" title="SGI" alt="sgi" />
-      </div>
-      <div className="login-form-container">
-        <label>
-          E-mail
-          <br />
-          <input
-            className="input-login-email"
-            type="email"
-            name="email"
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </label>
-      </div>
-      <div className="login-form-container">
-        <label>
-          {" "}
-          Senha <br />
-          <input
-            className="input-login-password"
-            type="password"
-            name="password"
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </label>
-      </div>
-      <div className="login-button">
-        <button id="button-submit" type="submit">
-          Entrar
-        </button>
-      </div>
-      </div>
-    </form>
+    <div className="login-body">
+      <form className="container-login" onSubmit={handleSubmit}>
+        <div className="content-login">
+          <div className="logo">
+            <img src={Logo} width="200px" title="SGI" alt="sgi" />
+          </div>
+          <div className="login-form-container">
+            <label>
+              E-mail
+              <br />
+              <input
+                className="input-login-email"
+                type="email"
+                name="email"
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </label>
+          </div>
+          <div className="login-form-container">
+            <label>
+              {" "}
+              Senha <br />
+              <input
+                className="input-login-password"
+                type="password"
+                name="password"
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </label>
+          </div>
+
+          <div className='container-forgetSign'>
+          <div className='forgetSign'>
+            <p>Esqueci a Senha</p>
+          </div>
+          <div className='forgetSign'>
+            <p>Cadastre -se</p>
+          </div>
+          </div>
+
+          <div className="login-button">
+            <button id="button-submit" type="submit">
+              Entrar
+            </button>
+          </div>
+        </div>
+      </form>
     </div>
   );
 };

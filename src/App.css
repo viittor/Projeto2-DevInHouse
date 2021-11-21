@@ -111,6 +111,24 @@ p {
   height: 30px;
   padding-left: 5px;
 }
+.container-forgetSign {
+  display: flex;
+}
+.forgetSign {
+  padding-top: 10px;
+  padding-bottom: auto;
+  padding-right: 10px;
+  padding-left: 10px;
+  text-decoration: none;
+  color: #fc4949;
+  font-size: 14px;
+  border-radius: 10px;
+}
+
+.forgetSign:hover {
+  background: #1f0e3d;
+  color: white;
+}
 
 /* Header*/
 .header-container {
