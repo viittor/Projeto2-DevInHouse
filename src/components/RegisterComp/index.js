@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
 
-
 const Register = () => {
   const history = useHistory();
 
@@ -87,7 +86,7 @@ const Register = () => {
           city: city,
           uf: uf,
           complement: complement,
-          coordinates: [latitude, longitude]
+          coordinates: [latitude, longitude],
         }),
       });
 
@@ -102,196 +101,218 @@ const Register = () => {
   };
 
   return (
-    <form className="container-form" onSubmit={handleSubmit}>
-      <div className="menu-container">
-        <h1>Cadastro de Empresas</h1>
-        <button type="submit">Salvar</button>
-        <button onClick={() => history.push("/map")}>Cancelar</button>
-      </div>
-      <div className="container-form-register">
-        <div className="form-line">
-          <label>
-            Razão Social
-            <br />
-            <input
-              type="text"
-              name="corporateName"
-              placeholder="Ex.: Hyper Involves Ltda"
-              value={corporateName}
-              onChange={(e) => setCorporateName(e.target.value)}
-              required
-            />
-          </label>
-
-          <label>
-            Nome Fantasia
-            <br />
-            <input
-              type="text"
-              name="commercialName"
-              placeholder="Ex.: Hyper Involves"
-              value={commercialName}
-              onChange={(e) => setCommercialName(e.target.value)}
-              required
-            />
-          </label>
-        </div>
-
-        <div className="form-line">
-          <label>
-            CNPJ
-            <br />
-            <input
-              type="text"
-              name="cnpj"
-              placeholder="Ex.: 99.999.999/9999-99"
-              value={cnpj}
-              onChange={(e) => setCnpj(e.target.value)}
-              required
-            />
-          </label>
-
-          <label>
-            Email
-            <br />
-            <input
-              type="email"
-              name="emailCompany"
-              placeholder="Ex.: example@company.com"
-              value={emailCompany}
-              onChange={(e) => setEmailCompany(e.target.value)}
-              required
-            />
-          </label>
+    <div className="body">
+      <form className="container-form" onSubmit={handleSubmit}>
+        <div className="menu-container">
+          <h1 id="register-h1">Cadastro de Empresas</h1>
         </div>
         <hr />
-        <div className="form-line">
-          <label>
-            CEP
-            <br />
-            <input
-              type="text"
-              name="zipCode"
-              placeholder="Ex.: 99.999-999"
-              value={zipCode}
-              onChange={(e) => setZipCode(e.target.value)}
-              required
-            />
-          </label>
+        <div className="container-form-register">
+          <div className="form-line">
+            <label id="label-input">
+              Razão Social
+              <br />
+              <input
+                className="input-box"
+                type="text"
+                name="corporateName"
+                placeholder="Ex.: Hyper Involves Ltda"
+                value={corporateName}
+                onChange={(e) => setCorporateName(e.target.value)}
+                required
+              />
+            </label>
 
-          <label>
-            Endereço
-            <br />
-            <input
-              type="text"
-              name="adress"
-              placeholder="Ex.: Rua dos Involvidos"
-              value={adress}
-              onChange={(e) => setAdress(e.target.value)}
-              required
-            />
-          </label>
+            <label id="label-input">
+              Nome Fantasia
+              <br />
+              <input
+                className="input-box"
+                type="text"
+                name="commercialName"
+                placeholder="Ex.: Hyper Involves"
+                value={commercialName}
+                onChange={(e) => setCommercialName(e.target.value)}
+                required
+              />
+            </label>
+          </div>
+
+          <div className="form-line">
+            <label id="label-input">
+              CNPJ
+              <br />
+              <input
+                className="input-box"
+                type="text"
+                name="cnpj"
+                placeholder="Ex.: 99.999.999/9999-99"
+                value={cnpj}
+                onChange={(e) => setCnpj(e.target.value)}
+                required
+              />
+            </label>
+
+            <label id="label-input">
+              Email
+              <br />
+              <input
+                className="input-box"
+                type="email"
+                name="emailCompany"
+                placeholder="Ex.: example@company.com"
+                value={emailCompany}
+                onChange={(e) => setEmailCompany(e.target.value)}
+                required
+              />
+            </label>
+          </div>
+
+          <div className="form-line">
+            <label id="label-input">
+              CEP
+              <br />
+              <input
+                className="input-box"
+                type="text"
+                name="zipCode"
+                placeholder="Ex.: 99.999-999"
+                value={zipCode}
+                onChange={(e) => setZipCode(e.target.value)}
+                required
+              />
+            </label>
+
+            <label id="label-input">
+              Endereço
+              <br />
+              <input
+                className="input-box"
+                type="text"
+                name="adress"
+                placeholder="Ex.: Rua dos Involvidos"
+                value={adress}
+                onChange={(e) => setAdress(e.target.value)}
+                required
+              />
+            </label>
+          </div>
+
+          <div className="form-line">
+            <label id="label-input">
+              Número
+              <br />
+              <input
+                className="input-box"
+                type="number"
+                name="adressNumber"
+                placeholder="Ex.: 000"
+                value={adressNumber}
+                onChange={(e) => setAdressNumber(e.target.value)}
+                required
+              />
+            </label>
+
+            <label id="label-input">
+              Bairro
+              <br />
+              <input
+                className="input-box"
+                type="text"
+                name="district"
+                placeholder="Ex.: Centro"
+                value={district}
+                onChange={(e) => setDistrict(e.target.value)}
+                required
+              />
+            </label>
+          </div>
+
+          <div className="form-line">
+            <label id="label-input">
+              Cidade
+              <br />
+              <input
+                className="input-box"
+                type="text"
+                name="city"
+                placeholder="Ex.: Florianópolis"
+                value={city}
+                onChange={(e) => setCity(e.target.value)}
+                required
+              />
+            </label>
+
+            <label id="label-input">
+              Estado
+              <br />
+              <input
+                className="input-box"
+                type="text"
+                name="uf"
+                placeholder="Ex.: Santa Catarina"
+                value={uf}
+                onChange={(e) => setUf(e.target.value)}
+                required
+              />
+            </label>
+          </div>
+
+          <div className="form-line">
+            <label id="label-input">
+              Complemento
+              <br />
+              <input
+                className="input-box"
+                type="text"
+                name="complement"
+                placeholder=""
+                value={complement}
+                onChange={(e) => setComplement(e.target.value)}
+              />
+            </label>
+          </div>
+
+          <div className="form-line">
+            <label id="label-input">
+              Latitude
+              <br />
+              <input
+                className="input-box"
+                type="number"
+                name="latitude"
+                placeholder="Ex.: 00.000"
+                value={latitude}
+                onChange={(e) => setLatitude(e.target.value)}
+                required
+              />
+            </label>
+
+            <label id="label-input">
+              Longitude
+              <br />
+              <input
+                className="input-box"
+                type="number"
+                name="longitude"
+                placeholder="Ex.: 00.000"
+                value={longitude}
+                onChange={(e) => setLongitude(e.target.value)}
+                required
+              />
+            </label>
+          </div>
         </div>
-
-        <div className="form-line">
-          <label>
-            Número
-            <br />
-            <input
-              type="number"
-              name="adressNumber"
-              placeholder="Ex.: 000"
-              value={adressNumber}
-              onChange={(e) => setAdressNumber(e.target.value)}
-              required
-            />
-          </label>
-
-          <label>
-            Bairro
-            <br />
-            <input
-              type="text"
-              name="district"
-              placeholder="Ex.: Centro"
-              value={district}
-              onChange={(e) => setDistrict(e.target.value)}
-              required
-            />
-          </label>
+        <div className="footer-form">
+          <button className="buttonAction" type="submit">
+            Salvar
+          </button>
+          <button className="buttonAction" onClick={() => history.push("/map")}>
+            Cancelar
+          </button>
         </div>
-
-        <div className="form-line">
-          <label>
-            Cidade
-            <br />
-            <input
-              type="text"
-              name="city"
-              placeholder="Ex.: Florianópolis"
-              value={city}
-              onChange={(e) => setCity(e.target.value)}
-              required
-            />
-          </label>
-
-          <label>
-            Estado
-            <br />
-            <input
-              type="text"
-              name="uf"
-              placeholder="Ex.: Santa Catarina"
-              value={uf}
-              onChange={(e) => setUf(e.target.value)}
-              required
-            />
-          </label>
-        </div>
-
-        <div className="form-line">
-          <label>
-            Complemento
-            <br />
-            <input
-              type="text"
-              name="complement"
-              placeholder=""
-              value={complement}
-              onChange={(e) => setComplement(e.target.value)}
-            />
-          </label>
-        </div>
-        <hr />
-        <div className="form-line">
-          <label>
-            Latitude
-            <br />
-            <input
-              type="number"
-              name="latitude"
-              placeholder="Ex.: 00.000"
-              value={latitude}
-              onChange={(e) => setLatitude(e.target.value)}
-              required
-            />
-          </label>
-
-          <label>
-            Longitude
-            <br />
-            <input
-              type="number"
-              name="longitude"
-              placeholder="Ex.: 00.000"
-              value={longitude}
-              onChange={(e) => setLongitude(e.target.value)}
-              required
-            />
-          </label>
-        </div>
-      </div>
-    </form>
+      </form>
+    </div>
   );
 };
 

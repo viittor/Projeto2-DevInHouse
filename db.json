@@ -1,5 +1,6 @@
 {
-  "products": [],
+  "products": [
+  ],
   "enterprises": [
     {
       "corporateName": "Super Patão Ltda",
@@ -54,24 +55,6 @@
         "-59.97886303827154"
       ],
       "id": 3
-    },
-    {
-      "corporateName": "Empresa Teste",
-      "commercialName": "Super Teste",
-      "cnpj": "55.555.555/0001-05",
-      "emailCompany": "teste@teste.com.br",
-      "zipCode": "84130000",
-      "adress": "Rua Teste",
-      "adressNumber": "42",
-      "district": "Teste",
-      "city": "Teste",
-      "uf": "Teste",
-      "complement": "Testando",
-      "coordinates": [
-        "-4.3405",
-        "-39.012"
-      ],
-      "id": 4
     }
   ],
   "suppliers": [

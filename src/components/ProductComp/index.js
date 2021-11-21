@@ -1,33 +1,33 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 
 const Product = () => {
-    const history = useHistory();
+  const history = useHistory();
 
-    const [urlImage, setUrlImage] = useState("");
-    const [name, setName] = useState("");
-    const [unitValue, setUnitValue] = useState("");
-    const [description, setDescription] = useState("");
-    const [supplier, setSupplier] = useState("");
-    const [group, setGroup] = useState("");
+  const [urlImage, setUrlImage] = useState("");
+  const [name, setName] = useState("");
+  const [unitValue, setUnitValue] = useState("");
+  const [description, setDescription] = useState("");
+  const [supplier, setSupplier] = useState("");
+  const [group, setGroup] = useState("");
 
-    const handleSubmit = async (event) => {
-      try {
-        event.preventDefault();
-        if (!name) {
-          alert("Por favor preenchao nome do produto");
-          return;
-        } else if (!unitValue) {
-          alert("Por favor preencha o valor unitário");
-          return;
-        } else if (!supplier) {
-          alert("Por favor selecione um fornecedor");
-          return;
-        } else if (!group) {
-          alert("Por favor selecione um grupo");
-          return;
-        }
-        await fetch("http://localhost:3333/products", {
+  const handleSubmit = async (event) => {
+    try {
+      event.preventDefault();
+      if (!name) {
+        alert("Por favor preenchao nome do produto");
+        return;
+      } else if (!unitValue) {
+        alert("Por favor preencha o valor unitário");
+        return;
+      } else if (!supplier) {
+        alert("Por favor selecione um fornecedor");
+        return;
+      } else if (!group) {
+        alert("Por favor selecione um grupo");
+        return;
+      }
+      await fetch("http://localhost:3333/products", {
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
@@ -40,96 +40,131 @@ const Product = () => {
           description: description,
           supplier: supplier,
           group: group,
-         }),
+        }),
       });
-        alert("Produto cadastrado com sucesso!");
-        history.push("/map");
-      } catch (error) {
-        alert("Não foi possivel concluir a sua solicitação! Por favor tente novamente.");
-      }
+      alert("Produto cadastrado com sucesso!");
+      history.push("/map");
+    } catch (error) {
+      alert(
+        "Não foi possivel concluir a sua solicitação! Por favor tente novamente."
+      );
     }
-  
-    return(
-        <form className="container-form" onSubmit={handleSubmit}>
-      <div className="menu-container">
-        <h1>Cadastro de Produtos</h1>
-        <button type="submit">Salvar</button>
-        <button onClick={() => history.push("/map")}>Cancelar</button>
-      </div>
-      <div className="container-form-product">
-        <div className="form-line">
-          <label>
-            URL da imagem
-            <br />
-            <input
-              type="url"
-              name="urlImage"
-              onChange={(e) => setUrlImage(e.target.value)}
-              required
-            />
-          </label>
-        </div>
+  };
 
-        <div className="form-line">
-          <label>
-            Nome
-            <br />
-            <input
-              type="text"
-              name="name"
-              onChange={(e) => setName(e.target.value)}
-              required
-            />
-          </label>
-        
-          <label>
-            Custo unitário
-            <br />
-            <input
-              type="text"
-              name="unitValue"
-              onChange={(e) => setUnitValue(e.target.value)}
-              required
-            />
-          </label>
-          </div>
-        <div className="form-line">
-          <label>
-            Descrição
-            <br />
-            <textarea
-              type="text"
-              name="description"
-              onChange={(e) => setDescription(e.target.value)}
-              required
-            />
-          </label>
+  // useEffect(() => {
+  //   async function getSupplier() {
+  //     const supplierReturn = await fetch("http://localhost:3333/suppliers");
+  //     const supplierData = await supplierReturn.json();
+  //     setSupplier(supplierData);
+  //   }
+  //   getSupplier();
+  // }, []);
+
+  return (
+    <div className="body">
+      <form className="container-form" onSubmit={handleSubmit}>
+        <div className="menu-container">
+          <h1 id="product-h1">Cadastro de Produtos</h1>
         </div>
-        <div className="form-line">
-          <label>
-            Fornecedor
-            <br />
-            <input
-              type="text"
-              name="supplier"
-              onChange={(e) => setSupplier(e.target.value)}
-              required
-            />
-          </label>
-        
-          <label>
-            Grupo
-            <br />
-            <input
-              type="text"
-              name="group"
-              onChange={(e) => setGroup(e.target.value)}
-              required
-            />
-          </label>
+        <hr />
+        <div className="container-form-product">
+          <div className="form-line">
+            <label id="label-input">
+              URL da imagem
+              <br />
+              <input
+                className="input-box"
+                type="url"
+                name="urlImage"
+                onChange={(e) => setUrlImage(e.target.value)}
+                placeholder="Ex.: http://www.exemplo.com.br"
+                required
+              />
+            </label>
           </div>
-      </div>
-    </form>
-    )
+
+          <div className="form-line">
+            <label id="label-input">
+              Nome
+              <br />
+              <input
+                className="input-box"
+                type="text"
+                name="name"
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Ex.: Melão"
+                required
+              />
+            </label>
+
+            <label id="label-input">
+              Custo unitário
+              <br />
+              <input
+                className="input-box"
+                type="number"
+                name="unitValue"
+                onChange={(e) => setUnitValue(e.target.value)}
+                placeholder="Ex.: R$ 5,20"
+                required
+              />
+            </label>
+          </div>
+          <div className="form-line">
+            <label id="label-input">
+              Descrição
+              <br />
+              <textarea
+                className="input-box"
+                type="text"
+                name="description"
+                onChange={(e) => setDescription(e.target.value)}
+                placeholder="Descreva aqui o produto."
+                required
+              />
+            </label>
+          </div>
+          <div className="form-line">
+            <label id="label-input">
+              Fornecedor
+              <select
+                name="supplier"
+                value={supplier}
+                onChange={(e) => setSupplier(e.target.value)}
+                required
+              >
+                {/* <option value="" selected disabled>
+                  Selecione
+                </option>
+                {supplier.map((supplier) => (
+                  <option value={supplier}>{supplier}</option>
+                ))} */}
+              </select>
+            </label>
+
+            <label id="label-input">
+              Grupo
+              <br />
+              <input
+                className="input-box"
+                type="text"
+                name="group"
+                onChange={(e) => setGroup(e.target.value)}
+                required
+              />
+            </label>
+          </div>
+        </div>
+        <div className="footer-form">
+          <button className="buttonAction" type="submit">
+            Salvar
+          </button>
+          <button className="buttonAction" onClick={() => history.push("/map")}>
+            Cancelar
+          </button>
+        </div>
+      </form>
+    </div>
+  );
 };
 export default Product;

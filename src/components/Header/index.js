@@ -8,17 +8,17 @@ const Header = () => {
         <>
         <div className='header-container'>
         <div className='header-logo'>
-        <Link to="/"> <img src={Logo}  width= '100px' title='logo' alt='logo'/></Link>
+        <Link to="/"> <img src={Logo}  width= '100px' title='SGI' alt='SGI'/></Link>
         </div>
         <div className='container-links' >
         <div className='header-link'>
-        <Link to="/Map">Mapa</Link>
+        <Link to="/Map" className='link'>Mapa</Link>
         </div>
         <div className='header-link'>
-        <Link to="/Product">Produtos</Link>
+        <Link to="/Product" className='link'>Produtos</Link>
         </div>
         <div className='header-link'>
-        <Link to="/Register">Empresas</Link>
+        <Link to="/Register" className='link'>Empresas</Link>
         </div>
         </div>
         </div>
