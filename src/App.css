@@ -10,6 +10,9 @@
   display: flex;
   justify-content: center;
 }
+p {
+  padding-bottom: 8px;
+}
 /* Login Screen */
 
 .login-body {
@@ -97,7 +100,8 @@
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 }
-#button-submit:hover, .buttonAction:hover{
+#button-submit:hover,
+.buttonAction:hover {
   background-color: #1f0e3d;
   color: white;
 }
@@ -111,17 +115,18 @@
 /* Header*/
 .header-container {
   margin: 0;
+  height: 10vh;
   padding: 7px 5vh;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
   background: #1f0e3d;
+  overflow: hidden;
 }
 .header-logo {
   margin-left: 20px;
-  margin-top: 5px;
+  margin-top: auto;
   margin-right: 20px;
-  margin-bottom: 5px;
+  margin-bottom: auto;
 }
 .container-links {
   display: flex;
@@ -130,10 +135,9 @@
   align-items: center;
 }
 .link {
-  padding: 10px;
+  padding: 10px auto 10px auto;
   display: flex;
   justify-content: space-around;
-  flex-flow: row wrap;
   color: white;
   text-decoration: none;
 }
@@ -150,7 +154,7 @@
 }
 .container-map {
   width: 90%;
-  height: 80vh;
+  height: 81vh;
   margin: 10px auto;
 }
 
@@ -160,9 +164,9 @@
   margin: 0;
   box-sizing: border-box;
   display: flex;
-  height: 80vh;
+  height: 83vh;
   justify-content: center;
-  align-items: center;
+  overflow: hidden;
   padding: 10px;
 }
 .container-form {
@@ -171,8 +175,11 @@
   width: 100%;
   height: 70vh;
   padding: 25px 30px;
-  border-radius: 5px;
+  border-radius: 10px;
   box-sizing: border-box;
+  overflow: hidden;
+  overflow-y: scroll;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
 }
 .form-line {
   display: flex;
@@ -222,6 +229,21 @@ textarea {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 }
+/* policy */
+
+.container-form-privacy {
+  margin-top: 10px;
+  max-width: 1000px;
+  width: 100%;
+  height: 79vh;
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+  overflow-y: scroll;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
 /* footer */
 
 .footer-form {
@@ -229,5 +251,34 @@ textarea {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90px;
+}
+
+.footer-container {
+  margin: 0;
+  padding: 5px 5vh;
+  background: #1f0e3d;
+  height: 7vh;
+  overflow: hidden;
+}
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px auto 10px auto;
+  justify-content: space-between;
+  align-items: center;
+}
+.link {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  color: white;
+  text-decoration: none;
+}
+.link:hover {
+  background: #c3b9d36b;
+  border-radius: 10px;
+}
+.copy {
+  color: white;
 }

@@ -9,7 +9,9 @@ const Product = () => {
   const [unitValue, setUnitValue] = useState("");
   const [description, setDescription] = useState("");
   const [supplier, setSupplier] = useState("");
+  const [provider, setProvider] = useState([]);
   const [group, setGroup] = useState("");
+  const [groups, setGroups] = useState([]);
 
   const handleSubmit = async (event) => {
     try {
@@ -51,14 +53,20 @@ const Product = () => {
     }
   };
 
-  // useEffect(() => {
-  //   async function getSupplier() {
-  //     const supplierReturn = await fetch("http://localhost:3333/suppliers");
-  //     const supplierData = await supplierReturn.json();
-  //     setSupplier(supplierData);
-  //   }
-  //   getSupplier();
-  // }, []);
+  useEffect(() => {
+    async function getSupplier() {
+      const supplierReturn = await fetch("http://localhost:3333/suppliers");
+      const supplierData = await supplierReturn.json();
+      setProvider(supplierData);
+    }
+    async function getGroups() {
+      const groupReturn = await fetch("http://localhost:3333/groups");
+      const groupData = await groupReturn.json();
+      setGroups(groupData);
+    }
+    getSupplier();
+    getGroups();
+  }, []);
 
   return (
     <div className="body">
@@ -93,6 +101,7 @@ const Product = () => {
                 name="name"
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Ex.: Melão"
+                maxlength="100"
                 required
               />
             </label>
@@ -104,8 +113,10 @@ const Product = () => {
                 className="input-box"
                 type="number"
                 name="unitValue"
+                step="any"
                 onChange={(e) => setUnitValue(e.target.value)}
                 placeholder="Ex.: R$ 5,20"
+                maxlength="6"
                 required
               />
             </label>
@@ -120,6 +131,7 @@ const Product = () => {
                 name="description"
                 onChange={(e) => setDescription(e.target.value)}
                 placeholder="Descreva aqui o produto."
+                maxLength="100"
                 required
               />
             </label>
@@ -127,31 +139,40 @@ const Product = () => {
           <div className="form-line">
             <label id="label-input">
               Fornecedor
+              <br />
               <select
+                className="input-box"
                 name="supplier"
                 value={supplier}
                 onChange={(e) => setSupplier(e.target.value)}
                 required
               >
-                {/* <option value="" selected disabled>
+                <option value="" selected disabled>
                   Selecione
                 </option>
-                {supplier.map((supplier) => (
+                {provider.map((supplier) => (
                   <option value={supplier}>{supplier}</option>
-                ))} */}
+                ))}
               </select>
             </label>
 
             <label id="label-input">
               Grupo
               <br />
-              <input
+              <select
                 className="input-box"
-                type="text"
-                name="group"
+                name="groups"
+                value={group}
                 onChange={(e) => setGroup(e.target.value)}
                 required
-              />
+              >
+                <option value="" selected disabled>
+                  Selecione
+                </option>
+                {groups.map((group) => (
+                  <option value={group}>{group}</option>
+                ))}
+              </select>
             </label>
           </div>
         </div>

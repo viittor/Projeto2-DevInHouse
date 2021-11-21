@@ -4,6 +4,8 @@ import Register from './pages/Register/register.js';
 import MapView from './pages/Map/index.js';
 import Product from './pages/Product/product.js';
 import PageLogin from './pages/Login/index.js';
+import PolicyPage from './pages/Policy/index.js';
+
 
 const Router = () => {
     return (
@@ -12,7 +14,8 @@ const Router = () => {
                 <Route path="/" exact component={PageLogin}/>
                 <Route path="/Map" component={MapView}/>
                 <Route path="/Product" component={Product}/>
-                <Route path="/Register" component={Register}/>
+                 <Route path="/Register" component={Register}/>
+                 <Route path="/Policy" component={PolicyPage}/>
             </Switch>
         </BrowserRouter>
     );

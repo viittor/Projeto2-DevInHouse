@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
+import { mask } from "remask";
 
 const Register = () => {
   const history = useHistory();
@@ -148,7 +149,9 @@ const Register = () => {
                 name="cnpj"
                 placeholder="Ex.: 99.999.999/9999-99"
                 value={cnpj}
-                onChange={(e) => setCnpj(e.target.value)}
+                onChange={(e) =>
+                  setCnpj(mask(e.target.value, ["99.999.999/9999-99"]))
+                }
                 required
               />
             </label>
@@ -178,7 +181,9 @@ const Register = () => {
                 name="zipCode"
                 placeholder="Ex.: 99.999-999"
                 value={zipCode}
-                onChange={(e) => setZipCode(e.target.value)}
+                onChange={(e) =>
+                  setZipCode(mask(e.target.value, ["99.999-999"]))
+                }
                 required
               />
             </label>

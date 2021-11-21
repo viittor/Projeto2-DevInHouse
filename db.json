@@ -1,5 +1,14 @@
 {
   "products": [
+    {
+      "urlImage": "https://www.cacaushow.com.br/on/demandware.static/-/Sites-masterCatalog_CacauShow/default/dw2f0097da/large/1000905_1.png",
+      "name": "Gourmet Delicias 500g",
+      "unitValue": "5.20",
+      "description": "Linda caixa presenteável, repleta de bombons feitos de chocolate ao leite, amargo e branco, recheado",
+      "supplier": "Cacau Show",
+      "group": "Doces",
+      "id": 1
+    }
   ],
   "enterprises": [
     {
@@ -14,10 +23,7 @@
       "city": "Pato Branco",
       "uf": "Paraná",
       "complement": "",
-      "coordinates": [
-        "-26.234448544889414",
-        "-52.67188116312716"
-      ],
+      "coordinates": ["-26.234448544889414", "-52.67188116312716"],
       "id": 1
     },
     {
@@ -32,10 +38,7 @@
       "city": "Belo Horizonte",
       "uf": "Minas Gerais",
       "complement": "Prox. Churrascaria do Toni",
-      "coordinates": [
-        "-19.428672629034295",
-        "-43.90516707394416"
-      ],
+      "coordinates": ["-19.428672629034295", "-43.90516707394416"],
       "id": 2
     },
     {
@@ -50,23 +53,52 @@
       "city": "Manaus",
       "uf": "Amazonas",
       "complement": "",
-      "coordinates": [
-        "-3.04335342857981",
-        "-59.97886303827154"
-      ],
+      "coordinates": ["-3.04335342857981", "-59.97886303827154"],
       "id": 3
+    },
+    {
+      "corporateName": "Brunnu's Supermercado Ltda",
+      "commercialName": "Brunnu's Supermercado",
+      "cnpj": "55.512.458/0001-20",
+      "emailCompany": "brunnussuper@hotmail.com",
+      "zipCode": "41.253-552",
+      "adress": "R. São Marcos",
+      "adressNumber": "10",
+      "district": "São Marcos",
+      "city": "Salvador",
+      "uf": "Bahia",
+      "complement": "",
+      "coordinates": ["-12.924698878760656", "-38.439014744871756"],
+      "id": 4
     }
   ],
   "suppliers": [
-    "Del valle",
     "Amazon",
-    "Dell"
+    "Apple",
+    "Cacau Show",
+    "Camil Alimentos",
+    "Colombo",
+    "Consul",
+    "Dell",
+    "Del valle",
+    "Elma Chips",
+    "Frimesa",
+    "Garoto",
+    "Italac",
+    "Itambé",
+    "Marfrig",
+    "Perdigão",
+    "Sadia"
   ],
   "groups": [
     "Carnes",
     "Ovos",
     "Higiene",
     "Cereais",
-    "Massas"
+    "Massas",
+    "Temperos",
+    "Doces",
+    "Bebidas",
+    "Outro"
   ]
 }

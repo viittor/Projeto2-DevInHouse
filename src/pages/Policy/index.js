@@ -1,16 +1,17 @@
 import React from "react";
-import MapView from "../../components/MapComp";
+import Policy from "../../components/PrivacyPolicy";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
-const PageMap = () => {
-    return(
+
+const PolicyPage = () => {
+    return (
         <>
         <Header/>
-        <MapView/>
+        <Policy/>
         <Footer/>
-    </>
+        </>
     );
 };
 
-export default PageMap;
+export default PolicyPage;

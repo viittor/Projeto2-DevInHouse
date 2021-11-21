@@ -26,7 +26,7 @@ const MapView = () => {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         {enterprise.map((item) => (
-          <Marker position={item.coordinates} key={item.cnpj}> 
+          <Marker position={item.coordinates} key={item.cnpj}>
             <Popup>
               <div className="popupMap">
                 <p>Razão Social: {item.corporateName}</p>
