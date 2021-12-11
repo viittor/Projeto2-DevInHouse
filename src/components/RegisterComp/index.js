@@ -69,7 +69,7 @@ const Register = () => {
         return;
       }
       console.log("chegou aqui");
-      await fetch("http://localhost:3333/enterprises", {
+      await fetch("https://restapisgi.herokuapp.com/enterprises", {
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
