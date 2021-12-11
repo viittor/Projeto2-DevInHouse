@@ -117,7 +117,7 @@ const Register = () => {
                 className="input-box"
                 type="text"
                 name="corporateName"
-                placeholder="Ex.: Hyper Involves Ltda"
+                placeholder="Ex.: Compre Mais Ltda"
                 value={corporateName}
                 onChange={(e) => setCorporateName(e.target.value)}
                 required
@@ -131,7 +131,7 @@ const Register = () => {
                 className="input-box"
                 type="text"
                 name="commercialName"
-                placeholder="Ex.: Hyper Involves"
+                placeholder="Ex.: Super Pão Hipermercados"
                 value={commercialName}
                 onChange={(e) => setCommercialName(e.target.value)}
                 required
@@ -195,7 +195,7 @@ const Register = () => {
                 className="input-box"
                 type="text"
                 name="adress"
-                placeholder="Ex.: Rua dos Involvidos"
+                placeholder="Ex.: Avenida Brasil"
                 value={adress}
                 onChange={(e) => setAdress(e.target.value)}
                 required

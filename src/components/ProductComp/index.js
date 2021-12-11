@@ -29,7 +29,7 @@ const Product = () => {
         alert("Por favor selecione um grupo");
         return;
       }
-      await fetch("http://localhost:3333/products", {
+      await fetch("https://restapisgi.herokuapp.com/products", {
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
@@ -55,12 +55,12 @@ const Product = () => {
 
   useEffect(() => {
     async function getSupplier() {
-      const supplierReturn = await fetch("http://localhost:3333/suppliers");
+      const supplierReturn = await fetch("https://restapisgi.herokuapp.com/suppliers");
       const supplierData = await supplierReturn.json();
       setProvider(supplierData);
     }
     async function getGroups() {
-      const groupReturn = await fetch("http://localhost:3333/groups");
+      const groupReturn = await fetch("https://restapisgi.herokuapp.com/groups");
       const groupData = await groupReturn.json();
       setGroups(groupData);
     }

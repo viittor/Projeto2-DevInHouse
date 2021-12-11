@@ -7,7 +7,7 @@ const MapView = () => {
 
   useEffect(() => {
     async function getEnterprise() {
-      const result = await fetch("http://localhost:3333/enterprises");
+      const result = await fetch("https://restapisgi.herokuapp.com/enterprises");
       const dataEnterprise = await result.json();
       setEnterprise(dataEnterprise);
     }
